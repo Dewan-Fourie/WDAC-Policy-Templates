@@ -11,8 +11,11 @@ All Policy Templates contain the following policy rules:
 - Boot Audit on Failure
 - Disabled Runtime Filepath Rules
 
-Applications are added to the whitelist using the "Publisher" rule type using the Issuing CA and Publisher. This is an acceptable method of whitelisting as per the Australian Cyber Security Centre's guidelines on Application Control:
-- publisher certificate rules (combining both publisher names and product names)
+Applications are whitelisted using either Cryptographic Hashing or using the publisher and product name part of the program's certificate if signed. 
+This is an acceptable method of whitelisting as per the Australian Cyber Security Centre's guidelines on Application Control:
+- Cryptographic hash rules
+- Publisher certificate rules (combining both publisher names and product names)
+- Path rules (ensuring file system permissions are configured to prevent unauthorised modification of folder and file permissions, folder contents and individual files).
 
 All applications are added with the Usermode and Kernel Rule Scope and are created in Audit Mode.
 
